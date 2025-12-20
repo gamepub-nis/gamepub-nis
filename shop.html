@@ -1,0 +1,259 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game Pub</title>
+        <link rel="stylesheet" href="hfd.css">
+        <link rel="stylesheet" href="stilshop.css">
+    </head>
+    <body>
+        <div class="container">
+        <header class="header">
+            <div class="header-container">
+                <!-- Logo -->
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <span><img src="slike/gp1.png" alt="Game Pub Logo"></span>
+                    </div>
+                    <span class="logo-text"><span class="logo-glow">GAME</span><span class="highlight">PUB</span></span>
+                </a>
+
+                <!-- Navigation Menu -->
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link ">Početna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="onama.html" class="nav-link ">O nama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="menu.html" class="nav-link ">Meni</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="shop.html" class="nav-link active">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="turniri.html" class="nav-link">Turniri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="kontakt.html" class="nav-link">Kontakt</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- side bar sekcija-->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+    <div class="toggle-lines">
+                    <span class="top-line common"></span>
+                    <span class="middle-line common"></span>
+                    <span class="bottom-line common"></span>
+    </div >
+    <div class="sidebar">
+                <nav class="nav-sidebar-nav">
+                    <ul class="nav-list-sidebar ">
+                        
+                        <li class="nav-item-sidebar">
+                            <a href="index.html" class="nav-link">Početna</a>
+                        </li>
+                        <li class="nav-item-sidebar">
+                            <a href="onama.html" class="nav-link">O nama</a>
+                        </li>
+                        <li class="nav-item-sidebar">
+                            <a href="shop.html" class="nav-link">Shop</a>
+                        </li>
+                        <li class="nav-item-sidebar">
+                            <a href="turniri.html" class="nav-link">Turniri</a>
+                        </li>
+                        <li class="nav-item-sidebar">
+                            <a href="kontakt.html" class="nav-link">Kontakt</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+                <!-- Social Media Icons -->
+                <div class="social-icons">
+                    <!-- Instagram Icon -->
+                    <a href="https://www.instagram.com/gamepub_nis/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <!-- TikTok Icon -->
+                    <a href="https://www.tiktok.com/@gamepubnis" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+<div class="shop-contet">
+    <div class="product-box">
+    <div class="box-img">
+      <img src="slike/ZUKS6821.jpg" alt="">
+    </div>
+    <div class="box-text">
+        <p class="description">GAME PUB DUKS</p>
+        <p class="cena">3000 RSD</p>
+    </div>
+    </div>
+        <div class="product-box">
+        <div class="box-img">
+           <img src="slike/ZUKS6821.jpg" alt="">
+        </div>
+        <div class="box-text">
+            <p class="description">fsfsfsfsfsf</p>
+            <p class="cena">544235</p>
+        </div>
+        </div>
+    </div>
+    
+    <div class="popup" >
+        <div id="popup-in">
+        <h2>GAME PUB DUKS</h2>
+         <div class="popup-slider">
+        <div class="slider-container">
+            <img src="slike/ZUKS6821.jpg" alt="Product image 1" class="slider-img active">
+            <img src="slike/ZUKS7206.jpg" alt="Product image 2" class="slider-img">
+            <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </div>
+         <h2>3000 RSD</h2>
+        <button id="pop-close" >izadji</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlideIndex = 1;
+
+        function changeSlide(n) {
+            showSlide(currentSlideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlide(currentSlideIndex = n);
+        }
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slider-img');
+            const dots = document.querySelectorAll('.dot');
+            
+            if (n > slides.length) {
+                currentSlideIndex = 1;
+            }
+            if (n < 1) {
+                currentSlideIndex = slides.length;
+            }
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[currentSlideIndex - 1].classList.add('active');
+            dots[currentSlideIndex - 1].classList.add('active');
+        }
+    </script>
+    
+
+
+ <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-section">
+            <h3>Game Pub</h3>
+            <p>Gde se igrači susreću, takmiče i osvajaju</p>
+          </div>
+          <div class="footer-section">
+            <h4>Brzi Linkovi</h4>
+            <ul>
+              <li><a href="index.html">Početna</a></li>
+              <li><a href="onama.html">O nama</a></li>
+              <li><a href="menu.html">Meni</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Kontakt</h4>
+            <p>Email: info@gamepub.rs</p>
+            <p>Telefon: +381 18 123 456</p>
+          </div>
+          <div class="footer-section">
+            <h4>Pratite Nas</h4>
+            <div class="footer-section">
+              <!-- Instagram Icon -->
+              <a
+                href="https://www.instagram.com/gamepub_nis/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <!-- TikTok Icon -->
+              <a
+                href="https://www.tiktok.com/@gamepubnis"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                aria-label="TikTok"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Game Pub. Sva prava zadržana.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+        const popup = document.querySelector('.popup');
+        const popupIn = document.getElementById('popup-in');
+        const popClose = document.getElementById('pop-close');
+        const productBoxes = document.querySelectorAll('.product-box');
+
+        productBoxes.forEach(box => {
+            box.addEventListener('click', (e) => {
+                const description = box.querySelector('.description').textContent;
+                const cena = box.querySelector('[class="cena"]').textContent;
+                const img = box.querySelector('img').src;
+
+                document.querySelector('#popup-in h2').textContent = description;
+                document.querySelector('#popup-in img').src = img;
+                
+                popup.classList.add('active');
+            });
+        });
+
+        popClose.addEventListener('click', () => {
+            popup.classList.remove('active');
+        });
+
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+            }
+        });
+    </script>
+    </body>
+    </html>
