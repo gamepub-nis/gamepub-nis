@@ -7,56 +7,61 @@
             margin-top: 40px;
         }
 
-        .menu-section {
-            
-            display: flex;
-            flex-direction: column;
-            align-items: center; 
-            
-        }
+       .menu-section {
+    margin-top: 100px;
+}
 
-        .menu-title {
-            text-align: center;
-            font-size: 2.8em;
-            color: #E10600;
-            margin-bottom: 50px;
-            font-weight: 900;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(225, 6, 0, 0.5);
-        }
+
+      .menu-title {
+    text-align: center;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+}
 
         .menu-items {
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-    
-        }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
 
-        .menu-item {
-            background: linear-gradient(135deg, rgba(225, 6, 0, 0.1), rgba(225, 6, 0, 0.05));
-            border: 2px solid #E10600;
-            border-radius: 8px;
-            padding: 50px;
-            transition: all 0.3s ease;
-            overflow: visible;
-            width: 1000px;
-            height: 400px;
-            position: relative;
-            display: flex;
-            flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-        }
-        
+.menu-item {
+    background: linear-gradient(180deg, #0f1320, #0a0d16);
+    border-radius: 24px;
+    padding: 35px 30px;
+    position: relative;
+    overflow: show;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+        .menu-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(225,6,0,0.15), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
 
-        .menu-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(225, 6, 0, 0.4);
-            border-color: #ffffff;
-        }
+     .menu-item:hover::before {
+    opacity: 1;
+}
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+}
+.item-name {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
 
-        .item-name {
+.lobby { color: #cccccc; }
+.premium { color: #0d6efd; }
+.vip { color: #e10600; }
+.ps5 { color: #ffffff; }
+
+    /*    .item-name {
             color: #ffffff;
             font-size: 1.6em;
             width: fit-content;
@@ -97,6 +102,24 @@
             top: 40px;
             left: -60px;
         }
+        */
+        .satnica {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.item-description {
+    color: #cccccc;
+    font-size: 14px;
+}
+
+.item-price {
+    font-weight: 700;
+    color: #ffffff;
+}
+/*
         .item-description {
             color: #f3f3f3;
             font-size: 1.4em;
@@ -115,22 +138,48 @@
             font-weight: 900;
             text-transform: uppercase;
         }
+        */
         .menu-section {
         max-width: 1200px;
         margin: 40px auto;
         padding: 0 20px;
     }
+    .slika {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.slika img {
+    width: 80px;
+    opacity: 0.6;
+}
 
 
- @media only screen and (max-width: 768px) {
-        .menu-item {
-            width: 100%;
-            flex-direction: column;
-            height: auto;
-        }
-        .item-name {
-            position: static;
-            transform: rotate(0);
-            margin-bottom: 20px;
-        }
+@media (max-width: 768px) {
+
+    .menu-items {
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
+
+    .menu-item {
+        padding: 25px 20px;
+    }
+
+    .item-name {
+        font-size: 1.4rem;
+    }
+
+    .satnica {
+        font-size: 14px;
+    }
+
+    .slika img {
+        width: 60px;
+    }
+    .menu-item:hover {
+        box-shadow: none;
+        transform: none;
+}
+}

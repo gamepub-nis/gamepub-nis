@@ -145,6 +145,9 @@ width: 300px;
             .container{
                 width: 100%;
             }
+            #popup-in {
+                width: 90%;
+            }
            
             .shop-contet{
                 width: 100%;
@@ -159,6 +162,7 @@ width: 300px;
             .dot{
                 height: 8px;
                 width: 8px;
+            
             }
             .popup-slider {
             position: relative;
@@ -173,6 +177,12 @@ width: 300px;
             justify-items: center;
 
         }
-      
+        .popup-slider img{
+            width: 250px;
 
         }
+        .slider-dots {
+            text-align: center;
+            padding: 5px;
+        }
+    }

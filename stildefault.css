@@ -1,26 +1,30 @@
 
         /* Hero Section (Demo) */
-        .hero {
-            height: calc(100vh - 73px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            
-        }
+      .hero {
+    height: calc(100vh - 73px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+      url("slike/ZUKS7206.jpg");
+    background-size: cover;
+    background-position: center;
+}
 
         .hero-content {
             text-align: center;
            
         }
 
-        .hero-title {
-            font-size: 60px;
-            font-weight: 1000;
-            color: #f42042;
-            margin-bottom: 16px;
-            letter-spacing: -1px;
-            
-        }
+       .hero-title {
+    animation: pulse 4s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { text-shadow: 0 0 20px rgba(225,6,0,0.4); }
+    50% { text-shadow: 0 0 35px rgba(225,6,0,0.8); }
+}
 
         .hero-title .highlight {
             color: #E10600;
@@ -38,42 +42,33 @@
             justify-content: center;
            
         }
-        .hero-slideshow img{ 
-            max-width: 500px;
-            max-height: 500px;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            border-radius: 8px;
-            border-radius:15%;
-        }
+     .hero-slideshow img {
+    max-width: 420px;
+    max-height: 420px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    animation: fade 2s ease-in-out;
+}
+
+@keyframes fade {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
 
         /* Responsive Design */
-        @media only screen and (max-width: 600px) {
-            .container{
-                width: 100%;
-            }
-             .nav {
-                display: none;
-             }
-        }
+      @media (max-width: 768px) {
 
-        @media only screen and (max-width: 768px) {
-            .container{
-                width: 100%;
-            }
-            .nav {
-                display: none;}
-             .hero-title {
-                font-size: 50px;
-            }
+    .hero {
+        padding: 40px 15px;
+    }
 
-            .hero-slideshow img {
-                max-width: 300px;
-                max-height: 300px;
-            }
-        }
-         @media only screen and (min-width: 769px) {
-            .menu-toggle {
-                display: none; /* Hide the toggle button on desktop */
-            }
-        }
+    .hero-slideshow {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-slideshow img {
+        max-width: 100%;
+        border-radius: 16px;
+    }
+}
